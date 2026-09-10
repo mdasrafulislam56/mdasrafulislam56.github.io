@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Daily Bangla Update — বাংলা খবর, চাকরি, অনলাইন কাজ, প্রযুক্তি ও শিক্ষার তথ্য।">
+<title>Daily Bangla Update | বাংলা খবর ও তথ্য</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href="index.html"><span>DBU</span> Daily Bangla Update</a>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <nav id="nav">
+      <a href="#latest">সর্বশেষ</a><a href="#jobs">চাকরি</a><a href="#online">অনলাইন কাজ</a>
+      <a href="#tech">প্রযুক্তি</a><a href="#education">শিক্ষা</a><a href="#international">আন্তর্জাতিক</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <div class="hero-text">
+      <p class="eyebrow">বাংলা তথ্য ও সংবাদ</p>
+      <h1>Daily Bangla Update</h1>
+      <p>খবর, চাকরি, অনলাইন কাজ, প্রযুক্তি ও শিক্ষার প্রয়োজনীয় তথ্য এক জায়গায়।</p>
+      <a class="btn" href="#latest">সর্বশেষ লেখা দেখুন</a>
+    </div>
+  </div>
+</section>
+
+<!-- Monetag Ad Zone: paste your Monetag ad code here -->
+<div class="container ad-slot" id="ad-top">Advertisement</div>
+
+<main class="container layout">
+  <section>
+    <div class="section-head" id="latest"><h2>সর্বশেষ লেখা</h2></div>
+    <div class="grid">
+      <article class="card">
+        <span class="tag">অনলাইন কাজ</span><h3>অনলাইনে Data Entry শেখার সহজ পথ</h3>
+        <p>শুরু করার আগে প্রয়োজনীয় দক্ষতা, Excel/Google Sheets এবং কাজ খোঁজার নিয়ম সম্পর্কে জানুন।</p>
+        <a href="article.html?post=data-entry">বিস্তারিত →</a>
+      </article>
+      <article class="card" id="jobs">
+        <span class="tag">চাকরি</span><h3>চাকরির আবেদন করার আগে যে বিষয়গুলো যাচাই করবেন</h3>
+        <p>নিয়োগ বিজ্ঞপ্তির যোগ্যতা, সময়সীমা ও প্রয়োজনীয় কাগজপত্র যাচাই করার একটি ব্যবহারিক checklist।</p>
+        <a href="article.html?post=job-checklist">বিস্তারিত →</a>
+      </article>
+      <article class="card" id="tech">
+        <span class="tag">প্রযুক্তি</span><h3>মোবাইলে ইন্টারনেট ডেটা সাশ্রয়ের ৭টি উপায়</h3>
+        <p>Background data, auto-update এবং video quality নিয়ন্ত্রণ করে কীভাবে ডেটা কম খরচ করবেন।</p>
+        <a href="article.html?post=data-saving">বিস্তারিত →</a>
+      </article>
+      <article class="card" id="education">
+        <span class="tag">শিক্ষা</span><h3>পরীক্ষার প্রস্তুতির জন্য ছোট দৈনিক রুটিন</h3>
+        <p>কম সময়ে নিয়মিত পড়াশোনা, revision এবং practice করার একটি সহজ পরিকল্পনা।</p>
+        <a href="article.html?post=study-routine">বিস্তারিত →</a>
+      </article>
+      <article class="card" id="online">
+        <span class="tag">অনলাইন কাজ</span><h3>Freelancing শুরু করার আগে ৫টি দক্ষতা</h3>
+        <p>ইংরেজি, typing, communication, spreadsheet এবং basic research—কেন গুরুত্বপূর্ণ তা জানুন।</p>
+        <a href="article.html?post=freelancing-skills">বিস্তারিত →</a>
+      </article>
+      <article class="card" id="international">
+        <span class="tag">আন্তর্জাতিক</span><h3>আন্তর্জাতিক খবর পড়ার সময় source যাচাই করুন</h3>
+        <p>একটি খবর সত্য কি না বুঝতে headline-এর বাইরে গিয়ে source, date ও corroboration দেখার নিয়ম।</p>
+        <a href="article.html?post=source-check">বিস্তারিত →</a>
+      </article>
+    </div>
+  </section>
+  <aside class="sidebar">
+    <div class="side-card"><h3>জনপ্রিয় বিভাগ</h3>
+      <a href="#jobs">চাকরি</a><a href="#online">অনলাইন কাজ</a><a href="#tech">প্রযুক্তি</a><a href="#education">শিক্ষা</a>
+    </div>
+    <div class="side-card"><h3>সার্চ</h3>
+      <input id="search" placeholder="লেখা খুঁজুন..." oninput="filterCards()">
+    </div>
+    <!-- Monetag Ad Zone: paste your Monetag code here -->
+    <div class="ad-slot small">Advertisement</div>
+  </aside>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><h3>Daily Bangla Update</h3><p>তথ্যভিত্তিক বাংলা কনটেন্ট প্রকাশের একটি স্বাধীন ওয়েবসাইট।</p></div>
+    <div><h3>গুরুত্বপূর্ণ</h3><a href="about.html">About Us</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></div>
+  </div>
+  <div class="copyright">© 2026 Daily Bangla Update. All rights reserved.</div>
+</footer>
+<script src="script.js"></script>
+</body></html>
