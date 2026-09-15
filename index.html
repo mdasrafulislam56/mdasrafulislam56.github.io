@@ -1,93 +1,613 @@
 <!doctype html>
 <html lang="bn">
 <head>
-<meta name="monetag" content="b6678d13adf4f1530790c38d693215ef"> 
+  <meta name="monetag" content="b6678d13adf4f1530790c38d693215ef">
   <script src="https://quge5.com/88/tag.min.js" data-zone="279923" async data-cfasync="false"></script>
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Daily Bangla Update — বাংলা খবর, চাকরি, অনলাইন কাজ, প্রযুক্তি ও শিক্ষার তথ্য।">
-<title>Daily Bangla Update | বাংলা খবর ও তথ্য</title>
-<link rel="stylesheet" href="style.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0f172a">
+  <meta name="description" content="Daily Bangla Update — বাংলা খবর, চাকরি, অনলাইন কাজ, প্রযুক্তি ও শিক্ষার তথ্য।">
+  <title>Daily Bangla Update | বাংলা খবর ও তথ্য</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, "Noto Sans Bengali", sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #0f172a;
+      color: white;
+      box-shadow: 0 3px 15px rgba(0,0,0,.12);
+    }
+
+    .header-inner {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: .2px;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      display: inline-block;
+      margin-right: 8px;
+      padding: 4px 8px;
+      border-radius: 7px;
+      background: #f59e0b;
+      color: #111827;
+      font-size: 15px;
+      font-weight: 900;
+    }
+
+    #nav {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    #nav a {
+      padding: 8px 11px;
+      border-radius: 7px;
+      color: #e2e8f0;
+      font-size: 14px;
+      transition: .2s;
+    }
+
+    #nav a:hover {
+      background: #1e293b;
+      color: #fff;
+    }
+
+    .menu-btn {
+      display: none;
+      border: 0;
+      background: transparent;
+      color: white;
+      font-size: 28px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding: 75px 0 80px;
+    }
+
+    .hero-text {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 10px;
+      padding: 5px 11px;
+      border-radius: 20px;
+      background: rgba(255,255,255,.12);
+      color: #fde68a;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      margin-bottom: 12px;
+      font-size: clamp(36px, 6vw, 62px);
+      line-height: 1.1;
+    }
+
+    .hero p {
+      max-width: 680px;
+      color: #dbeafe;
+      font-size: 18px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 20px;
+      border-radius: 9px;
+      background: #f59e0b;
+      color: #111827;
+      font-weight: 800;
+      transition: .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    /* AD AREA */
+    .ad-slot {
+      min-height: 70px;
+      margin-top: 24px;
+      margin-bottom: 24px;
+      padding: 18px;
+      border: 1px dashed #cbd5e1;
+      border-radius: 10px;
+      background: #fff;
+      color: #94a3b8;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    .ad-slot.small {
+      min-height: 100px;
+      margin: 0;
+    }
+
+    /* MAIN */
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 300px;
+      gap: 28px;
+      padding-bottom: 50px;
+    }
+
+    .section-head {
+      margin: 10px 0 18px;
+    }
+
+    .section-head h2 {
+      font-size: 28px;
+      color: #0f172a;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+      border: 1px solid #e2e8f0;
+      border-radius: 13px;
+      background: white;
+      box-shadow: 0 5px 18px rgba(15,23,42,.05);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(15,23,42,.10);
+    }
+
+    .tag {
+      display: inline-block;
+      margin-bottom: 9px;
+      padding: 4px 9px;
+      border-radius: 20px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      color: #0f172a;
+      font-size: 19px;
+      line-height: 1.4;
+    }
+
+    .card p {
+      margin-bottom: 12px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    .card > a {
+      color: #1d4ed8;
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .side-card {
+      padding: 20px;
+      border: 1px solid #e2e8f0;
+      border-radius: 13px;
+      background: white;
+      box-shadow: 0 5px 18px rgba(15,23,42,.05);
+    }
+
+    .side-card h3 {
+      margin-bottom: 13px;
+      color: #0f172a;
+      font-size: 18px;
+    }
+
+    .side-card a {
+      display: block;
+      padding: 8px 0;
+      border-bottom: 1px solid #f1f5f9;
+      color: #475569;
+    }
+
+    .side-card a:hover {
+      color: #1d4ed8;
+    }
+
+    #search {
+      width: 100%;
+      padding: 12px 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      outline: none;
+      font-size: 14px;
+    }
+
+    #search:focus {
+      border-color: #2563eb;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding-top: 45px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 35px;
+      padding-bottom: 35px;
+    }
+
+    footer h3 {
+      margin-bottom: 10px;
+      color: white;
+    }
+
+    footer p {
+      max-width: 550px;
+      color: #94a3b8;
+    }
+
+    footer a {
+      display: block;
+      margin: 5px 0;
+      color: #cbd5e1;
+    }
+
+    footer a:hover {
+      color: white;
+    }
+
+    .copyright {
+      padding: 17px;
+      border-top: 1px solid #1e293b;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 13px;
+    }
+
+    /* TABLET */
+    @media (max-width: 850px) {
+      .menu-btn {
+        display: block;
+      }
+
+      #nav {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 10px 4%;
+        background: #0f172a;
+        box-shadow: 0 8px 15px rgba(0,0,0,.15);
+      }
+
+      #nav.nav-open {
+        display: flex;
+      }
+
+      #nav a {
+        padding: 11px 8px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    /* MOBILE */
+    @media (max-width: 600px) {
+      .header-inner {
+        min-height: 62px;
+      }
+
+      .logo {
+        font-size: 16px;
+      }
+
+      .logo span {
+        font-size: 12px;
+        margin-right: 5px;
+      }
+
+      #nav {
+        top: 62px;
+      }
+
+      .hero {
+        padding: 55px 0 60px;
+      }
+
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head h2 {
+        font-size: 24px;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
 <header class="site-header">
   <div class="container header-inner">
-    <a class="logo" href="index.html"><span>DBU</span> Daily Bangla Update</a>
-    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <a class="logo" href="index.html">
+      <span>DBU</span> Daily Bangla Update
+    </a>
+
+    <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+      ☰
+    </button>
+
     <nav id="nav">
-      <a href="#latest">সর্বশেষ</a><a href="#jobs">চাকরি</a><a href="#online">অনলাইন কাজ</a>
-      <a href="#tech">প্রযুক্তি</a><a href="#education">শিক্ষা</a><a href="#international">আন্তর্জাতিক</a>
+      <a href="#latest">সর্বশেষ</a>
+      <a href="#jobs">চাকরি</a>
+      <a href="#online">অনলাইন কাজ</a>
+      <a href="#tech">প্রযুক্তি</a>
+      <a href="#education">শিক্ষা</a>
+      <a href="#international">আন্তর্জাতিক</a>
     </nav>
+
   </div>
 </header>
 
 <section class="hero">
   <div class="container">
     <div class="hero-text">
+
       <p class="eyebrow">বাংলা তথ্য ও সংবাদ</p>
+
       <h1>Daily Bangla Update</h1>
-      <p>খবর, চাকরি, অনলাইন কাজ, প্রযুক্তি ও শিক্ষার প্রয়োজনীয় তথ্য এক জায়গায়।</p>
-      <a class="btn" href="#latest">সর্বশেষ লেখা দেখুন</a>
+
+      <p>
+        খবর, চাকরি, অনলাইন কাজ, প্রযুক্তি ও শিক্ষার প্রয়োজনীয়
+        তথ্য এক জায়গায়।
+      </p>
+
+      <a class="btn" href="#latest">
+        সর্বশেষ লেখা দেখুন
+      </a>
+
     </div>
   </div>
 </section>
 
-<!-- Monetag Ad Zone: paste your Monetag ad code here -->
-<div class="container ad-slot" id="ad-top">Advertisement</div>
+<!-- Monetag Ad Area -->
+<div class="container ad-slot" id="ad-top">
+  Advertisement
+</div>
 
 <main class="container layout">
+
   <section>
-    <div class="section-head" id="latest"><h2>সর্বশেষ লেখা</h2></div>
+
+    <div class="section-head" id="latest">
+      <h2>সর্বশেষ লেখা</h2>
+    </div>
+
     <div class="grid">
+
       <article class="card">
-        <span class="tag">অনলাইন কাজ</span><h3>অনলাইনে Data Entry শেখার সহজ পথ</h3>
-        <p>শুরু করার আগে প্রয়োজনীয় দক্ষতা, Excel/Google Sheets এবং কাজ খোঁজার নিয়ম সম্পর্কে জানুন।</p>
-        <a href="article.html?post=data-entry">বিস্তারিত →</a>
+        <span class="tag">অনলাইন কাজ</span>
+        <h3>অনলাইনে Data Entry শেখার সহজ পথ</h3>
+        <p>
+          শুরু করার আগে প্রয়োজনীয় দক্ষতা, Excel/Google Sheets
+          এবং কাজ খোঁজার নিয়ম সম্পর্কে জানুন।
+        </p>
+        <a href="article.html?post=data-entry">
+          বিস্তারিত →
+        </a>
       </article>
+
       <article class="card" id="jobs">
-        <span class="tag">চাকরি</span><h3>চাকরির আবেদন করার আগে যে বিষয়গুলো যাচাই করবেন</h3>
-        <p>নিয়োগ বিজ্ঞপ্তির যোগ্যতা, সময়সীমা ও প্রয়োজনীয় কাগজপত্র যাচাই করার একটি ব্যবহারিক checklist।</p>
-        <a href="article.html?post=job-checklist">বিস্তারিত →</a>
+        <span class="tag">চাকরি</span>
+        <h3>চাকরির আবেদন করার আগে যে বিষয়গুলো যাচাই করবেন</h3>
+        <p>
+          নিয়োগ বিজ্ঞপ্তির যোগ্যতা, সময়সীমা ও প্রয়োজনীয়
+          কাগজপত্র যাচাই করার একটি ব্যবহারিক checklist।
+        </p>
+        <a href="article.html?post=job-checklist">
+          বিস্তারিত →
+        </a>
       </article>
+
       <article class="card" id="tech">
-        <span class="tag">প্রযুক্তি</span><h3>মোবাইলে ইন্টারনেট ডেটা সাশ্রয়ের ৭টি উপায়</h3>
-        <p>Background data, auto-update এবং video quality নিয়ন্ত্রণ করে কীভাবে ডেটা কম খরচ করবেন।</p>
-        <a href="article.html?post=data-saving">বিস্তারিত →</a>
+        <span class="tag">প্রযুক্তি</span>
+        <h3>মোবাইলে ইন্টারনেট ডেটা সাশ্রয়ের ৭টি উপায়</h3>
+        <p>
+          Background data, auto-update এবং video quality
+          নিয়ন্ত্রণ করে কীভাবে ডেটা কম খরচ করবেন।
+        </p>
+        <a href="article.html?post=data-saving">
+          বিস্তারিত →
+        </a>
       </article>
+
       <article class="card" id="education">
-        <span class="tag">শিক্ষা</span><h3>পরীক্ষার প্রস্তুতির জন্য ছোট দৈনিক রুটিন</h3>
-        <p>কম সময়ে নিয়মিত পড়াশোনা, revision এবং practice করার একটি সহজ পরিকল্পনা।</p>
-        <a href="article.html?post=study-routine">বিস্তারিত →</a>
+        <span class="tag">শিক্ষা</span>
+        <h3>পরীক্ষার প্রস্তুতির জন্য ছোট দৈনিক রুটিন</h3>
+        <p>
+          কম সময়ে নিয়মিত পড়াশোনা, revision এবং practice
+          করার একটি সহজ পরিকল্পনা।
+        </p>
+        <a href="article.html?post=study-routine">
+          বিস্তারিত →
+        </a>
       </article>
+
       <article class="card" id="online">
-        <span class="tag">অনলাইন কাজ</span><h3>Freelancing শুরু করার আগে ৫টি দক্ষতা</h3>
-        <p>ইংরেজি, typing, communication, spreadsheet এবং basic research—কেন গুরুত্বপূর্ণ তা জানুন।</p>
-        <a href="article.html?post=freelancing-skills">বিস্তারিত →</a>
+        <span class="tag">অনলাইন কাজ</span>
+        <h3>Freelancing শুরু করার আগে ৫টি দক্ষতা</h3>
+        <p>
+          ইংরেজি, typing, communication, spreadsheet এবং
+          basic research—কেন গুরুত্বপূর্ণ তা জানুন।
+        </p>
+        <a href="article.html?post=freelancing-skills">
+          বিস্তারিত →
+        </a>
       </article>
+
       <article class="card" id="international">
-        <span class="tag">আন্তর্জাতিক</span><h3>আন্তর্জাতিক খবর পড়ার সময় source যাচাই করুন</h3>
-        <p>একটি খবর সত্য কি না বুঝতে headline-এর বাইরে গিয়ে source, date ও corroboration দেখার নিয়ম।</p>
-        <a href="article.html?post=source-check">বিস্তারিত →</a>
+        <span class="tag">আন্তর্জাতিক</span>
+        <h3>আন্তর্জাতিক খবর পড়ার সময় source যাচাই করুন</h3>
+        <p>
+          একটি খবর সত্য কি না বুঝতে headline-এর বাইরে গিয়ে
+          source, date ও corroboration দেখার নিয়ম।
+        </p>
+        <a href="article.html?post=source-check">
+          বিস্তারিত →
+        </a>
       </article>
+
     </div>
   </section>
+
   <aside class="sidebar">
-    <div class="side-card"><h3>জনপ্রিয় বিভাগ</h3>
-      <a href="#jobs">চাকরি</a><a href="#online">অনলাইন কাজ</a><a href="#tech">প্রযুক্তি</a><a href="#education">শিক্ষা</a>
+
+    <div class="side-card">
+      <h3>জনপ্রিয় বিভাগ</h3>
+
+      <a href="#jobs">চাকরি</a>
+      <a href="#online">অনলাইন কাজ</a>
+      <a href="#tech">প্রযুক্তি</a>
+      <a href="#education">শিক্ষা</a>
     </div>
-    <div class="side-card"><h3>সার্চ</h3>
-      <input id="search" placeholder="লেখা খুঁজুন..." oninput="filterCards()">
+
+    <div class="side-card">
+      <h3>সার্চ</h3>
+
+      <input
+        id="search"
+        type="search"
+        placeholder="লেখা খুঁজুন..."
+        oninput="filterCards()"
+        aria-label="লেখা খুঁজুন"
+      >
     </div>
-    <!-- Monetag Ad Zone: paste your Monetag code here -->
-    <div class="ad-slot small">Advertisement</div>
+
+    <!-- Monetag Ad Area -->
+    <div class="ad-slot small">
+      Advertisement
+    </div>
+
   </aside>
+
 </main>
 
 <footer>
+
   <div class="container footer-grid">
-    <div><h3>Daily Bangla Update</h3><p>তথ্যভিত্তিক বাংলা কনটেন্ট প্রকাশের একটি স্বাধীন ওয়েবসাইট।</p></div>
-    <div><h3>গুরুত্বপূর্ণ</h3><a href="about.html">About Us</a><a href="privacy.html">Privacy Policy</a><a href="contact.html">Contact</a></div>
+
+    <div>
+      <h3>Daily Bangla Update</h3>
+      <p>
+        তথ্যভিত্তিক বাংলা কনটেন্ট প্রকাশের একটি স্বাধীন ওয়েবসাইট।
+      </p>
+    </div>
+
+    <div>
+      <h3>গুরুত্বপূর্ণ</h3>
+
+      <a href="about.html">About Us</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+
   </div>
-  <div class="copyright">© 2026 Daily Bangla Update. All rights reserved.</div>
+
+  <div class="copyright">
+    © 2026 Daily Bangla Update. All rights reserved.
+  </div>
+
 </footer>
+
 <script src="script.js"></script>
-</body></html>
+
+</body>
+</html>
